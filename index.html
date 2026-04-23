@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="setLanguage('tr')">TR</button>
+            <span>|</span>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <header>
+            <h1 data-i18n="title">Randevu Sistemi</h1>
+            <p data-i18n="subtitle">Bilgilerinizi girerek hızlıca randevu oluşturun.</p>
+        </header>
+
+        <section class="appointment-form">
+            <form id="booking-form">
+                <div class="input-group">
+                    <label for="name" data-i18n="labelName">Ad Soyad</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="service" data-i18n="labelService">Hizmet</label>
+                    <select id="service" required>
+                        <option value="" data-i18n="selectDefault">Seçiniz...</option>
+                        <option value="Yazılım Danışmanlığı" data-i18n="service1">Yazılım Danışmanlığı</option>
+                        <option value="Tasarım İncelemesi" data-i18n="service2">Tasarım İncelemesi</option>
+                        <option value="Proje Planlama" data-i18n="service3">Proje Planlama</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="date" data-i18n="labelDate">Tarih</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="time" data-i18n="labelTime">Saat</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+                <button type="submit" id="submit-btn" data-i18n="btnSubmit">Randevu Oluştur</button>
+            </form>
+        </section>
+
+        <section class="appointment-list">
+            <h2 data-i18n="activeAppointments">Aktif Randevular</h2>
+            <div id="appointments-container" class="grid-container">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
